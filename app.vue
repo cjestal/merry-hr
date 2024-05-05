@@ -8,7 +8,7 @@
 				<div class="xl:pl-72">
 					<!-- Sticky search header -->
 					<div
-						class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b  px-4 shadow-sm sm:px-6 lg:px-8"
+						class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b  px-4 shadow-sm sm:px-6 lg:px-8 bg-gray-50 "
 					>
 						<button
 							type="button"
@@ -24,12 +24,12 @@
 								<label for="search-field" class="sr-only">Search</label>
 								<div class="relative w-full">
 									<MagnifyingGlassIcon
-										class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-500"
+										class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-900"
 										aria-hidden="true"
 									/>
 									<input
 										id="search-field"
-										class="block h-full w-full border-0 bg-transparent py-0 pl-8 pr-0 text-white focus:ring-0 sm:text-sm"
+										class="block h-full w-full border-0 bg-transparent py-0 pl-8 pr-0 text-gray-900 focus:ring-0 sm:text-sm outline-none"
 										placeholder="Search..."
 										type="search"
 										name="search"

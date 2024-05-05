@@ -1,116 +1,16 @@
 <template>
 	<main class="">
-		<header
+		<!-- <header
 			class="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-6 sm:py-6 lg:px-8"
 		>
-			<h1 class="text-base font-semibold leading-7 text-white">Deployments</h1>
-
-			<!-- Sort dropdown -->
-			<Menu as="div" class="relative">
-				<MenuButton
-					class="flex items-center gap-x-1 text-sm font-medium leading-6 text-white"
-				>
-					Sort by
-					<ChevronUpDownIcon class="h-5 w-5 text-gray-500" aria-hidden="true" />
-				</MenuButton>
-				<transition
-					enter-active-class="transition ease-out duration-100"
-					enter-from-class="transform opacity-0 scale-95"
-					enter-to-class="transform opacity-100 scale-100"
-					leave-active-class="transition ease-in duration-75"
-					leave-from-class="transform opacity-100 scale-100"
-					leave-to-class="transform opacity-0 scale-95"
-				>
-					<MenuItems
-						class="absolute right-0 z-10 mt-2.5 w-40 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
-					>
-						<MenuItem v-slot="{ active }">
-							<a
-								href="#"
-								:class="[
-									active ? 'bg-gray-50' : '',
-									'block px-3 py-1 text-sm leading-6 text-gray-900',
-								]"
-								>Name</a
-							>
-						</MenuItem>
-						<MenuItem v-slot="{ active }">
-							<a
-								href="#"
-								:class="[
-									active ? 'bg-gray-50' : '',
-									'block px-3 py-1 text-sm leading-6 text-gray-900',
-								]"
-								>Date updated</a
-							>
-						</MenuItem>
-						<MenuItem v-slot="{ active }">
-							<a
-								href="#"
-								:class="[
-									active ? 'bg-gray-50' : '',
-									'block px-3 py-1 text-sm leading-6 text-gray-900',
-								]"
-								>Environment</a
-							>
-						</MenuItem>
-					</MenuItems>
-				</transition>
-			</Menu>
-		</header>
-
-		<!-- Deployment list -->
-		<ul role="list" class="divide-y divide-white/5">
-			<li
-				v-for="deployment in deployments"
-				:key="deployment.id"
-				class="relative flex items-center space-x-4 px-4 py-4 sm:px-6 lg:px-8"
-			>
-				<div class="min-w-0 flex-auto">
-					<div class="flex items-center gap-x-3">
-						<div
-							:class="[
-								statuses[deployment.status],
-								'flex-none rounded-full p-1',
-							]"
-						>
-							<div class="h-2 w-2 rounded-full bg-current" />
-						</div>
-						<h2 class="min-w-0 text-sm font-semibold leading-6 text-white">
-							<a :href="deployment.href" class="flex gap-x-2">
-								<span class="truncate">{{ deployment.teamName }}</span>
-								<span class="text-gray-400">/</span>
-								<span class="whitespace-nowrap">{{
-									deployment.projectName
-								}}</span>
-								<span class="absolute inset-0" />
-							</a>
-						</h2>
-					</div>
-					<div
-						class="mt-3 flex items-center gap-x-2.5 text-xs leading-5 text-gray-400"
-					>
-						<p class="truncate">{{ deployment.description }}</p>
-						<svg viewBox="0 0 2 2" class="h-0.5 w-0.5 flex-none fill-gray-300">
-							<circle cx="1" cy="1" r="1" />
-						</svg>
-						<p class="whitespace-nowrap">{{ deployment.statusText }}</p>
-					</div>
-				</div>
-				<div
-					:class="[
-						environments[deployment.environment],
-						'rounded-full flex-none py-1 px-2 text-xs font-medium ring-1 ring-inset',
-					]"
-				>
-					{{ deployment.environment }}
-				</div>
-				<ChevronRightIcon
-					class="h-5 w-5 flex-none text-gray-400"
-					aria-hidden="true"
-				/>
-			</li>
-		</ul>
+			<h1 class="text-base font-semibold leading-7 text-gray-900">Deployments</h1>
+		</header> -->
+		<main class="py-10">
+			<div class="px-4 sm:px-6 lg:px-8">
+				<NuxtPage />
+				<!-- Your content -->
+			</div>
+		</main>
 	</main>
 </template>
 
