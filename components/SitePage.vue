@@ -1,12 +1,8 @@
 <template>
 	<main class="">
-		<!-- <header
-			class="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-6 sm:py-6 lg:px-8"
-		>
-			<h1 class="text-base font-semibold leading-7 text-gray-900">Deployments</h1>
-		</header> -->
-		<main class="py-10">
+		<main class="py-6">
 			<div class="px-4 sm:px-6 lg:px-8">
+				
 				<NuxtPage />
 				<!-- Your content -->
 			</div>

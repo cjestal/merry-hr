@@ -20,7 +20,7 @@
 									:href="item.href"
 									:class="[
 										item.current
-											? 'bg-yellow-600 text-white'
+											? 'bg-yellow-500 text-white'
 											: 'text-gray-50 hover:text-white hover:bg-gray-700',
 										'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
 									]"
@@ -70,7 +70,7 @@
 								alt=""
 							/>
 							<span class="sr-only">Your profile</span>
-							<span aria-hidden="true">Tom Cook</span>
+							<span aria-hidden="true">Clint James</span>
 						</a>
 					</li>
 				</ul>
@@ -92,7 +92,7 @@ import {
 
 const navigation = [
 	{ name: "Projects", href: "#", icon: FolderIcon, current: false },
-	{ name: "Deployments", href: "#", icon: ServerIcon, current: true },
+	{ name: "Dashboard", href: "#", icon: ServerIcon, current: true },
 	{ name: "Activity", href: "#", icon: SignalIcon, current: false },
 	{ name: "Domains", href: "#", icon: GlobeAltIcon, current: false },
 	{ name: "Usage", href: "#", icon: ChartBarSquareIcon, current: false },
