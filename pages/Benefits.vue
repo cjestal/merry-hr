@@ -1,6 +1,5 @@
 <template>
-	<div>
-		<h1>Benefits</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Benefits" description="View and manage your benefits" />
+	</SitePage>
 </template>
-

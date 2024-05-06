@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Document Management" description="View and manage documents" />
+	</SitePage>
 </template>

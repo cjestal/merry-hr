@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Compliance & Policies" description="View and manage compliance records" />
+	</SitePage>
 </template>

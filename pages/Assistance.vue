@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Assistance Programs" description="Manage your assistance programs" />
+	</SitePage>
 </template>

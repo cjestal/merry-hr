@@ -1,7 +1,7 @@
 <template>
 	<main class="py-6">
-		<div class="px-4 sm:px-6 lg:px-8">
-			<NuxtPage />
+		<div class="flex flex-col px-4 sm:px-6 lg:px-8 gap-3">
+			<slot />
 			<!-- Your content -->
 		</div>
 	</main>

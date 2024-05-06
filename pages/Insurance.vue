@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Insurance Management" description="View and manage insurance records" />
+	</SitePage>
 </template>

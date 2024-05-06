@@ -1,3 +1,5 @@
 <template>
-	<h1>Dashboard</h1>
+	<SitePage>
+		<PageHeader title="Dashboard"/>
+	</SitePage>
 </template>

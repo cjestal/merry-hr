@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Skill Development Plans" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+	</SitePage>
 </template>

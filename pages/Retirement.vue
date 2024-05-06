@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Retirement Plans" description="View and manage retirement plans" />
+	</SitePage>
 </template>

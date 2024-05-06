@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Attendance" description="View and manage your attendance records" />
+	</SitePage>
 </template>

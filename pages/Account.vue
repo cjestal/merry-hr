@@ -1,5 +1,5 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Account" description="Manage your account settings and preferences" />
+	</SitePage>
 </template>

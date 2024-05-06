@@ -39,8 +39,7 @@
 							</form>
 						</div>
 					</div>
-
-					<SitePage />
+					<NuxtPage />
 				</div>
 			</div>
 		</body>
