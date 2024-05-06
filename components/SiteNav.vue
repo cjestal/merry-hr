@@ -1,5 +1,7 @@
 <template>
-	<div class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col bg-gray-600">
+	<div
+		class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col bg-gray-600"
+	>
 		<!-- Sidebar component, swap this element with another sidebar if you like -->
 		<div
 			class="flex grow flex-col gap-y-5 overflow-y-auto bg-black/10 px-6 ring-1 ring-white/5"
@@ -12,56 +14,43 @@
 				/>
 			</div>
 			<nav class="flex flex-1 flex-col">
-				<ul role="list" class="flex flex-1 flex-col gap-y-7">
-					<li>
-						<ul role="list" class="-mx-2 space-y-1">
-							<li v-for="item in navigation" :key="item.name">
-								<a
-									:href="item.href"
+				<ul role="list" class="flex flex-1 flex-col gap-y-2">
+					<li v-for="item in navigation" :key="item.name">
+						<NuxtLink
+							:to="item.href"
+							:class="[
+								isCurrentRoute(item.href)
+									? 'bg-yellow-500 text-white'
+									: 'text-gray-50 hover:text-white hover:bg-gray-700',
+								'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
+							]"
+						>
+							<component
+								:is="item.icon"
+								class="h-6 w-6 shrink-0"
+								aria-hidden="true"
+							/>
+							{{ item.name }}
+						</NuxtLink>
+						<ul v-if="item.subNavigation" class="pl-4 mt-2 space-y-1">
+							<li v-for="subItem in item.subNavigation" :key="subItem.name">
+								<NuxtLink
+									:to="subItem.href"
 									:class="[
-										item.current
+										isCurrentRoute(subItem.href)
 											? 'bg-yellow-500 text-white'
-											: 'text-gray-50 hover:text-white hover:bg-gray-700',
-										'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
-									]"
-								>
-									<component
-										:is="item.icon"
-										class="h-6 w-6 shrink-0"
-										aria-hidden="true"
-									/>
-									{{ item.name }}
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<div class="text-xs font-semibold leading-6 text-gray-400">
-							Your teams
-						</div>
-						<ul role="list" class="-mx-2 mt-2 space-y-1">
-							<li v-for="team in teams" :key="team.name">
-								<a
-									:href="team.href"
-									:class="[
-										team.current
-											? 'bg-gray-700 text-white'
 											: 'text-gray-400 hover:text-white hover:bg-gray-700',
 										'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold',
 									]"
 								>
-									<span
-										class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-700 text-[0.625rem] font-medium text-gray-400 group-hover:text-white"
-										>{{ team.initial }}</span
-									>
-									<span class="truncate">{{ team.name }}</span>
-								</a>
+									{{ subItem.name }}
+								</NuxtLink>
 							</li>
 						</ul>
 					</li>
 					<li class="-mx-6 mt-auto">
-						<a
-							href="#"
+						<NuxtLink
+							to="#"
 							class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-700"
 						>
 							<img
@@ -71,7 +60,7 @@
 							/>
 							<span class="sr-only">Your profile</span>
 							<span aria-hidden="true">Clint James</span>
-						</a>
+						</NuxtLink>
 					</li>
 				</ul>
 			</nav>
@@ -88,14 +77,90 @@ import {
 	ServerIcon,
 	SignalIcon,
 	XMarkIcon,
+	ClockIcon,
+	QuestionMarkCircleIcon,
 } from "@heroicons/vue/24/outline";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 
 const navigation = [
-	{ name: "Projects", href: "#", icon: FolderIcon, current: false },
-	{ name: "Dashboard", href: "#", icon: ServerIcon, current: true },
-	{ name: "Activity", href: "#", icon: SignalIcon, current: false },
-	{ name: "Domains", href: "#", icon: GlobeAltIcon, current: false },
-	{ name: "Usage", href: "#", icon: ChartBarSquareIcon, current: false },
-	{ name: "Settings", href: "#", icon: Cog6ToothIcon, current: false },
+	{ name: "Dashboard", href: "/", icon: ServerIcon },
+	{
+		name: "Benefits Administration",
+		href: "/benefits",
+		icon: ChartBarSquareIcon,
+		subNavigation: [
+			{ name: "Assistance Programs", href: "/assistance" },
+			{ name: "Benefits Enrollment", href: "/enrollment" },
+			{ name: "Insurance Management", href: "/insurance" },
+			{ name: "Retirement Plans", href: "/retirement" },
+		],
+	},
+	{
+		name: "Compliance & Policies",
+		href: "/compliance",
+		icon: Cog6ToothIcon,
+		subNavigation: [
+			{ name: "Document Management", href: "/documents" },
+			{ name: "HR Policies and Procedures", href: "/policies" },
+			{ name: "Legal Compliance", href: "/legal" },
+		],
+	},
+	{ name: "Employee Management", href: "/employees", icon: FolderIcon },
+	{
+		name: "Help and Support",
+		href: "/support",
+		icon: QuestionMarkCircleIcon,
+		subNavigation: [
+			{ name: "FAQs", href: "/faqs" },
+			{ name: "User Guides and Tutorials", href: "/guides" },
+		],
+	},
+	{
+		name: "Recruitment",
+		href: "/recruitment",
+		icon: SignalIcon,
+		subNavigation: [
+			{ name: "Applicant Tracking", href: "/tracking" },
+			{ name: "Candidate Evaluation", href: "/evaluation" },
+			{ name: "Interview Scheduling", href: "/scheduling" },
+			{ name: "Job Postings", href: "/postings" },
+		],
+	},
+	{
+		name: "Settings",
+		href: "/settings",
+		icon: Cog6ToothIcon,
+		subNavigation: [
+			{ name: "Account Settings", href: "/account" },
+			{ name: "Integration Options", href: "/integration" },
+			{ name: "Permissions", href: "/permissions" },
+		],
+	},
+	{
+		name: "Training & Development",
+		href: "/training",
+		icon: GlobeAltIcon,
+		subNavigation: [
+			{ name: "Attendance & Completion", href: "/completion" },
+			{ name: "Skill Development Plans", href: "/skills" },
+			{ name: "Training Programs/Courses", href: "/courses" },
+		],
+	},
+	{
+		name: "Attendance",
+		href: "/attendance",
+		icon: ClockIcon,
+		subNavigation: [
+			{ name: "Clock-In/Clock-Out", href: "/clock" },
+			{ name: "Leave Management", href: "/leave" },
+			{ name: "Timesheets", href: "/timesheets" },
+		],
+	},
 ];
+
+function isCurrentRoute(href) {
+	return route.path === href;
+}
 </script>
