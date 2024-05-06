@@ -2,7 +2,7 @@
 	<html class="h-full bg-gray-50">
 		<body class="h-full">
 			<div class="h-full bg-gray-50">
-				<SiteNavMobile /> <!-- Mobile navigation -->
+				<!-- <SiteNavMobile /> Mobile navigation -->
 				<SiteNav /> <!-- Desktop navigation -->
 
 				<div class="xl:pl-72">
