@@ -1,5 +1,8 @@
 <template>
 	<html class="h-full bg-gray-50">
+		<head>
+			<title>Merry HR</title>
+		</head>
 		<body class="h-full">
 			<div class="h-full bg-gray-50">
 				<!-- <SiteNavMobile /> Mobile navigation -->

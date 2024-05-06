@@ -1,5 +1,6 @@
+
 <template>
 	<SitePage>
-		<PageHeader title="Applicant Tracking" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
+		<PageHeaderWithTabs title="Applicant Tracking" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." />
 	</SitePage>
 </template>
