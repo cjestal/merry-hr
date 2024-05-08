@@ -161,6 +161,9 @@ const navigation = [
 ];
 
 function isCurrentRoute(href) {
-	return route.path === href;
+	if (href === '/') {
+		return route.path === '/';
+	}
+	return route.path.startsWith(href);
 }
 </script>
