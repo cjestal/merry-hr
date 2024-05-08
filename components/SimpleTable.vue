@@ -1,5 +1,5 @@
 <template>
-	<div class="px-4 pb-2 sm:px-6 lg:px-8 border rounded-md shadow-md">
+	<div class="px-4 pb-2 sm:px-6 lg:px-8 border rounded-md shadow-md bg-white">
 		<div class="sm:flex sm:items-center">
 			<div class="sm:flex-auto">
 				<!-- <h1 class="text-xl font-semibold leading-6 text-gray-900">{{ title }}</h1> -->
