@@ -8,6 +8,7 @@
 
 				<div class="xl:pl-72">
 					<SiteAnnouncement />
+					<!-- <SitePopup /> -->
 					<div
 						class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b px-4 shadow-sm sm:px-6 lg:px-8 bg-gray-50"
 					>

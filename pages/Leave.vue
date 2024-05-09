@@ -4,7 +4,7 @@
 			title="Leave Management"
 			description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
 		/>
-		<div class="flex gap-4  justify-center">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 			<div
 				v-for="stat in stats"
 				:key="stat.name"
@@ -51,7 +51,7 @@ const stats = [
 		name: "Annual Leave",
 		remaining: 4,
 		total: 20,
-		color: "blue-400",
+		color: "green-500",
 	},
 	// {
 	// 	name: "Comp Off",
