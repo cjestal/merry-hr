@@ -71,9 +71,15 @@
 								<td
 									class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0"
 								>
-									<a href="#" class="text-yellow-600 hover:text-yellow-900"
+									<!-- <a href="#" class="text-yellow-600 hover:text-yellow-900"
 										>Edit<span class="sr-only">, {{ person.name }}</span></a
-									>
+									> -->
+									<SiteSlideOver
+										label="Edit"
+										title="Edit"
+										buttonType="link"
+										description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+									/>
 								</td>
 							</tr>
 						</tbody>
@@ -85,10 +91,10 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
 
 const props = defineProps({
-  title: String
+	title: String,
 });
 
 const people = [

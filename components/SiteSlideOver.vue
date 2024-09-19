@@ -3,9 +3,17 @@
 		type="button"
 		class="block rounded-md bg-yellow-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
 		@click="open = true"
+		v-if="buttonType === 'button'"
 	>
 		{{ label }}
 	</button>
+	<a
+		v-if="buttonType === 'link'"
+		href="#"
+		class="text-yellow-600 hover:text-yellow-900"
+		@click="open = true"
+		>Edit</a
+	>
 	<TransitionRoot as="template" :show="open">
 		<Dialog class="relative z-50" @close="open = false">
 			<div class="fixed inset-0 bg-gray-600 bg-opacity-75" />
@@ -13,7 +21,7 @@
 			<div class="fixed inset-0 overflow-hidden">
 				<div class="absolute inset-0 overflow-hidden">
 					<div
-						class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16 "
+						class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16"
 					>
 						<TransitionChild
 							as="template"
@@ -285,6 +293,7 @@ import { defineProps } from "vue";
 defineProps({
 	label: String,
 	title: String,
+	buttonType: "link" | "button",
 	description: String,
 });
 
