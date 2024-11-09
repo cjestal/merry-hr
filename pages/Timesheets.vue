@@ -1,5 +1,6 @@
 <template>
-	<div>
-		<h1>Assistance Programs</h1>
-	</div>
+	<SitePage>
+		<PageHeader title="Timesheets" description="View and manage compliance records" />
+		<SimpleTable />
+	</SitePage>
 </template>
